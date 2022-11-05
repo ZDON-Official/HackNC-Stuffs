@@ -1,0 +1,23 @@
+<!-- Edit reminders and create new ones -->
+<!-- templates/reminders/reminder_form.html -->
+
+{% extends "reminders/base.html" %}
+
+<!-- Check if existing reminder -->
+{% block content %}
+    {% if reminder %}
+        <h2>✏️ Edit Reminder</h2>
+    {% else %}
+        <h2>✨ Create New Reminder</h2>
+    {% endif %}
+     <!-- Edit/create content of reminder with deadline -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Reminder">
+    </form>
+      <!-- Cancel edit or creation and head back to main page -->
+    <a href="{% url 'card-list' %}">
+        Cancel
+    </a>
+{% endblock %}

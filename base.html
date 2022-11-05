@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <title>Stuffs Reminders</title>
+ </head>
+ 
+<body>
+    <header>
+        <h1>Stuffs Reminders</h1>
+        {% include "reminders/navigation.html" %}
+    </header>
+    <main>
+          <!-- Add a new reminder -->
+        {% block content %}
+            <h2>Add Reminder</h2> <
+        {% endblock content %}
+          <!-- List reminders and their deadlines --></17>
+          {% block content %}
+            <h2>Deadlines</h2>
+        {% endblock content %}
+    </main>
+</body>
+
+</html>

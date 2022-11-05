@@ -1,0 +1,22 @@
+<!-- List of reminders that have been created and their deadlines -->
+<!-- templates/deadlines/reminder_list.html -->
+
+{% extends "reminders/base.html" %}
+{% load humanize %} <!-- Have reminders as 1st reminder, 2nd reminder instead of reminder 1, reminder 2 -->
+
+{% block content %}
+    <h2>
+        All Deadlines
+    </h2>
+      <!-- Button to create new reminder -->
+    <a href="{% url 'reminder-create' %}" role="button">
+        ✨ Create New Reminder
+    </a>
+    <!-- List out reminders with their deadlines -->
+    {% for reminder in deadline_list %}
+        {% ifchanged %}
+            <h3>🗃 {{ reminder.box | ordinal }} Box</h3>
+        {% endifchanged %}
+        {% include "reminders/reminder.html" %}
+    {% endfor %}
+{% endblock content %}
