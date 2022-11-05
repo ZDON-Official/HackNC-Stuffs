@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path(
         "",
-        TemplateView.as_view(template_name = "cards/base.html"),
+        TemplateView.as_view(template_name = "reminder/base.html"),
         name = "home"
     ),
 ]
