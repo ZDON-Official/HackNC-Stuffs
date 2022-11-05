@@ -1,0 +1,15 @@
+<!-- cards/templates/cards/card_form.html -->
+
+{% extends "reminder/base.html" %}
+
+{% block content %}
+    <h2>✨ Create New Stuff</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Stuff">
+    </form>
+    <a href="{% url 'reminder-list' %}">
+        Cancel
+    </a>
+{% endblock %}

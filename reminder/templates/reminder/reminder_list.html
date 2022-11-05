@@ -1,0 +1,16 @@
+<!-- cards/templates/cards/card_list.html -->
+
+{% extends "reminder/base.html" %}
+{% load humanize %}
+
+{% block content %}
+    <h2>
+        All Reminders
+    </h2>
+    {% for reminder in reminder_list %}
+        {% ifchanged %}
+            <h3>🗃 {{ reminder.box | ordinal }} Box</h3>
+        {% endifchanged %}
+        {% include "reminder/base.html" %}
+    {% endfor %}
+{% endblock content %}
